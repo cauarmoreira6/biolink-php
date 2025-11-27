@@ -17,12 +17,11 @@ $links = [
 <!DOCTYPE html>
 
 <html lang="pt-br">
-    <head>  
+<head>  
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.
-    0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioLink de <?php echo $nome; ?></title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -30,24 +29,23 @@ $links = [
         <img src="<?php echo $imagem; ?>" alt="Foto de Perfil" class="avatar">
         <h1> <?php echo $nome; ?> </h1>
         <p> <?php echo $bio; ?> </p>
-        
-        <div class="lista-links"></div>
-    </div>
 
-    <div class="lista-links">
-        <?php
-            foreach ($links as $texto => $url) {
-                $classe_extra = "";
+        <div class="lista-links">
+            <?php
+                foreach ($links as $texto => $url) {
+                    $classe_extra = "";
 
-                if ($texto == "Instagram") 
-                    $classe_extra = "destaque";
+                    if ($texto == "Instagram") {
+                        $classe_extra = "destaque";
+                    }
 
-                // O PHP constrói o botão HTML
-                echo "<a href='$url' class='btn $classe_extra' target='_blank'>
-                $texto
-                </a>";
-            }
-        ?>
+                    // O PHP constrói o botão HTML
+                    echo "<a href='$url' class='btn $classe_extra' target='_blank'>
+                        $texto
+                    </a>";
+                }
+            ?>
+        </div>
     </div>
 </body>
 </html>
